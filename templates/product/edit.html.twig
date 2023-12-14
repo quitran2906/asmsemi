@@ -1,0 +1,88 @@
+
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Edit Product{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background-color: #2c2c2c;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #f44336;
+            margin-bottom: 20px;
+        }
+
+        .edit-form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #444;
+            padding: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .edit-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .edit-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #333;
+            border-radius: 3px;
+            background-color: #555;
+            color: #fff;
+        }
+        .btn{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .back-to-list {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .back-to-list:hover {
+            background-color: #666;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>Edit Product</h1>
+
+    <div class="edit-form">
+        {{ include('product/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
+
+    <a href="{{ path('app_product_index') }}" class="back-to-list">Back to list</a>
+<div>
+    {{ include('product/_delete_form.html.twig') }}
+</div>
+{% endblock %}

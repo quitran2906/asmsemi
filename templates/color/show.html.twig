@@ -1,0 +1,103 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Color{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background-color: #2c2c2c;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #f44336;
+            margin-bottom: 20px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .details-table td {
+            background-color: #555;
+            color: #fff;
+        }
+
+        .details-table th {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .back-to-list, .edit-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 3px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .back-to-list {
+            background-color: #4caf50;
+        }
+
+        .back-to-list:hover {
+            background-color: #45a049;
+        }
+
+        .edit-btn {
+            background-color: #2196f3;
+        }
+
+        .edit-btn:hover {
+            background-color: #1e87f0;
+        }
+
+        .delete-form {
+            margin-top: 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>Color</h1>
+
+    <table class="table details-table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ color.id }}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ color.name }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_color_index') }}" class="back-to-list">Back to list</a>
+
+    <a href="{{ path('app_color_edit', {'id': color.id}) }}" class="edit-btn">Edit</a>
+
+    {{ include('color/_delete_form.html.twig') }}
+{% endblock %}
