@@ -79,9 +79,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_category_index') }}"class="back-to-list">t</a>
+    <a href="{{ path('app_category_index') }}"class="back-to-list">Back to list</a>
 
-    <a href="{{ path('app_category_edit', {'id': category.id}) }}"class="edit-link">Edit</a>
+    <a href="{{ path('', {'id': category.id}) }}"class="edit-link">Edit</a>
     <div class="btn">
         {{ include('category/_delete_form.html.twig') }}
     </div>
