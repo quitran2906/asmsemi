@@ -78,7 +78,9 @@
 
 {% block body %}
     <h1>Edit Color</h1>
-    
+    <div class="edit-form">
+        {{ include('color/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
 
     <a href="{{ path('app_color_index') }}" class="back-to-list">Back to list</a>
     <div class="back-to-list">
